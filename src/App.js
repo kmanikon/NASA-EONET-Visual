@@ -1,12 +1,25 @@
 import { useEonetEvents } from "./hooks/useEonetEvents";
 import EarthScene from "./components/scene/EarthScene";
+import CircularProgress from '@mui/material/CircularProgress';
 
 import './App.css';
 
 export default function App() {
   const { events, loading } = useEonetEvents();
 
-  if (loading) return <div>Loading events…</div>;
+  if (loading) return (
+    <div className="App">
+      <div className="App-header" style={{ height: "100vh", textAlign: 'center', display: 'flex', alignItems: 'center' }}>
+        <div>
+        <div style={{padding: 30}}>
+          Loading EONET Data …
+        </div>
+        <CircularProgress size="60px"/>
+        </div>
+      </div>
+    </div>
+
+  );
 
   return (
     <div className="App">
