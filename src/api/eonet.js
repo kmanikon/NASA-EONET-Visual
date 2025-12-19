@@ -17,7 +17,7 @@ try {
     );
     const data = await res.json();
     sessionStorage.setItem("eonet_data", JSON.stringify(data))
-    return data.events;
+    return data?.events;
 } catch (e) {
     console.log("error fetching nasa eonet api...")
     return []
