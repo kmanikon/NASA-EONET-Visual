@@ -1,7 +1,7 @@
 const BASE_URL = process.env.REACT_APP_EONET_URL;
 
 export async function fetchEvents({
-  days = 14,
+  days = 1,
   limit = 200,
   status = "open",
 } = {}) {
