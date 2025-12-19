@@ -7,7 +7,15 @@ import RoomIcon from '@mui/icons-material/Room';
 
 // Styled Tooltip
 const StyledTooltip = styled(({ className, ...props }) => (
-  <Tooltip {...props} arrow classes={{ popper: className }} />
+  <Tooltip 
+    {...props} 
+    arrow 
+    classes={{ popper: className }}
+    sx={{
+      zIndex: 9999,
+    }}
+    placement="top"
+  />
 ))(({ theme }) => ({
   [`& .MuiTooltip-tooltip`]: {
     backgroundColor: "rgba(30,30,30,0.95)",
@@ -45,7 +53,10 @@ export default function EventMarker({ lat, lon, event }) {
   return (
     <mesh ref={ref} position={position}>
       {visible && (
-        <Html style={{ pointerEvents: "auto" }}>
+        <Html 
+          style={{ pointerEvents: "auto" }} 
+          zIndexRange={[100, 0]}
+        >
           <StyledTooltip
             title={
               <div style={{overflow: 'hidden'}}>
@@ -63,7 +74,7 @@ export default function EventMarker({ lat, lon, event }) {
               style={{
                 cursor: "pointer", 
                 filter: "drop-shadow(0 0 1px black)",
-                zIndex: -1
+                zIndex: 0
               }} 
             />
           </StyledTooltip>
