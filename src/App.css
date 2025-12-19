@@ -14,4 +14,18 @@
   color: white;
 }
 
+.marker-icon {
+  color: #ef233c;
+  font-size: 36px !important;
+  z-index: -1;
+  transition: color 0.15s linear !important;
+}
+
+.marker-icon:hover {
+  color: #FF4B33 !important;
+  /* font-size: 56px !important; */ 
+  transition: color 0.15s linear;
+}
+
+
 

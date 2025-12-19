@@ -2,9 +2,27 @@ import { useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import { latLonToVector3 } from "../../utils/geo";
 import { Html } from "@react-three/drei";
-import { Tooltip } from "@mui/material";
-import ModeStandbyIcon from '@mui/icons-material/ModeStandby';
+import { Tooltip, styled, Typography } from "@mui/material";
 import RoomIcon from '@mui/icons-material/Room';
+
+// Styled Tooltip
+const StyledTooltip = styled(({ className, ...props }) => (
+  <Tooltip {...props} arrow classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .MuiTooltip-tooltip`]: {
+    backgroundColor: "rgba(30,30,30,0.95)",
+    color: "#fff",
+    fontSize: 14,
+    padding: "10px 14px",
+    borderRadius: 10,
+    boxShadow: "0px 4px 15px rgba(0,0,0,0.3)",
+    maxWidth: 350,
+    lineHeight: 1.4,
+  },
+  [`& .MuiTooltip-arrow`]: {
+    color: "rgba(30,30,30,0.95)",
+  },
+}));
 
 export default function EventMarker({ lat, lon, event }) {
   const ref = useRef();
@@ -14,21 +32,12 @@ export default function EventMarker({ lat, lon, event }) {
   useFrame(({ camera }) => {
     const distance = camera.position.length();
     if (distance > 5) {
-        setVisible(false)
-    }
-    else if (ref.current) {
-      // Get the marker's world position
+        setVisible(false);
+    } else if (ref.current) {
       const markerPos = ref.current.getWorldPosition(ref.current.position.clone());
-      
-      // Get direction from camera to marker
       const dirToMarker = markerPos.clone().sub(camera.position).normalize();
-      
-      // Get direction from sphere center to marker (the normal at this point)
       const normal = markerPos.clone().normalize();
-      
-      // If the dot product is positive, the marker is facing away from camera
       const dotProduct = normal.dot(dirToMarker);
-      
       setVisible(dotProduct < 0);
     }
   });
@@ -36,20 +45,28 @@ export default function EventMarker({ lat, lon, event }) {
   return (
     <mesh ref={ref} position={position}>
       {visible && (
-        <Html>
-          <Tooltip
+        <Html style={{ pointerEvents: "auto" }}>
+          <StyledTooltip
             title={
-                <div style={{ maxWidth: 400, fontSize: 14, zIndex: 1 }}>
-                <strong>{event.title}</strong>
-                <p style={{ margin: 0}}>
-                    {event.description ? event.description.slice(0, 100) + "…" : "No description"}
-                </p>
-                </div>
+              <div style={{overflow: 'hidden'}}>
+                <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 0.5 }}>
+                  {event.title}
+                </Typography>
+                <Typography variant="body2" sx={{ color: "#ccc", m: 0 }}>
+                  {event.description ? event.description.slice(0, 100) : "No description"}
+                </Typography>
+              </div>
             }
-            arrow
-            >
-          <RoomIcon style={{color: 'red', zIndex: -1, fontSize: 48}}/>
-        </Tooltip>
+          >
+            <RoomIcon 
+              className="marker-icon"
+              style={{
+                cursor: "pointer", 
+                filter: "drop-shadow(0 0 1px black)",
+                zIndex: -1
+              }} 
+            />
+          </StyledTooltip>
         </Html>
       )}
     </mesh>
