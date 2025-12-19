@@ -3,20 +3,17 @@ import { useRef, useState } from "react";
 import { latLonToVector3 } from "../../utils/geo";
 import { Html } from "@react-three/drei";
 import { Tooltip, styled, Typography } from "@mui/material";
-import RoomIcon from '@mui/icons-material/Room';
+import RoomIcon from "@mui/icons-material/Room";
 
 // Styled Tooltip
 const StyledTooltip = styled(({ className, ...props }) => (
-  <Tooltip 
-    {...props} 
-    arrow 
-    classes={{ popper: className }}
-    sx={{
-      zIndex: 9999,
-    }}
+  <Tooltip
+    {...props}
+    arrow
     placement="top"
+    classes={{ popper: className }}
   />
-))(({ theme }) => ({
+))(() => ({
   [`& .MuiTooltip-tooltip`]: {
     backgroundColor: "rgba(30,30,30,0.95)",
     color: "#fff",
@@ -34,48 +31,74 @@ const StyledTooltip = styled(({ className, ...props }) => (
 
 export default function EventMarker({ lat, lon, event }) {
   const ref = useRef();
+  const popperRef = useRef(null);
+
   const position = latLonToVector3(lat, lon);
   const [visible, setVisible] = useState(true);
+  const [open, setOpen] = useState(false);
+  const [clicked, setClicked] = useState(false);
 
   useFrame(({ camera }) => {
     const distance = camera.position.length();
     if (distance > 5) {
-        setVisible(false);
+      setVisible(false);
     } else if (ref.current) {
-      const markerPos = ref.current.getWorldPosition(ref.current.position.clone());
+      const markerPos = ref.current.getWorldPosition(
+        ref.current.position.clone()
+      );
       const dirToMarker = markerPos.clone().sub(camera.position).normalize();
       const normal = markerPos.clone().normalize();
       const dotProduct = normal.dot(dirToMarker);
       setVisible(dotProduct < 0);
+    }
+
+    // keep tooltip locked to marker while open
+    if ((open || clicked) && popperRef.current) {
+      popperRef.current.update();
     }
   });
 
   return (
     <mesh ref={ref} position={position}>
       {visible && (
-        <Html 
-          style={{ pointerEvents: "auto" }} 
+        <Html
+          style={{ pointerEvents: "auto" }}
           zIndexRange={[100, 0]}
         >
           <StyledTooltip
+            open={open || clicked}
+            onOpen={() => setOpen(true)}
+            onClose={() => setOpen(false)}
+            onMouseDown={() => setClicked((v) => !v)}
+            PopperProps={{
+              popperRef,
+              sx: {
+                zIndex: 9999, // 🔝 always above other markers
+                pointerEvents: "auto",
+              },
+            }}
             title={
-              <div style={{overflow: 'hidden'}}>
-                <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 0.5 }}>
+              <div style={{ overflow: "hidden" }}>
+                <Typography
+                  variant="subtitle2"
+                  sx={{ fontWeight: 600, mb: 0.5 }}
+                >
                   {event.title}
                 </Typography>
                 <Typography variant="body2" sx={{ color: "#ccc", m: 0 }}>
-                  {event.description ? event.description.slice(0, 100) : "No description"}
+                  {event.description
+                    ? event.description.slice(0, 100)
+                    : "No description"}
                 </Typography>
               </div>
             }
           >
-            <RoomIcon 
+            <RoomIcon
               className="marker-icon"
               style={{
-                cursor: "pointer", 
+                cursor: "pointer",
                 filter: "drop-shadow(0 0 1px black)",
-                zIndex: 0
-              }} 
+              }}
             />
           </StyledTooltip>
         </Html>
