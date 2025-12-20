@@ -1,6 +1,6 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import Earth from "./Earth";
 import EventMarkers from "./EventMarkers";
@@ -35,8 +35,20 @@ function CameraIntro({ targetDistance = 5 }) {
 
 export default function EarthScene({ events }) {
   return (
-    <Canvas camera={{ position: [0, 0, 20], fov: 50 }}>
-      {/* Intro zoom animation */}
+    <Canvas
+      camera={{ position: [0, 0, 20], fov: 50 }}
+      onCreated={({ gl }) => {
+        const canvas = gl.domElement;
+
+        canvas.addEventListener(
+          "contextmenu", 
+          (e) => { 
+            e.stopPropagation(); // prevent R3F / OrbitControls
+          },
+          true // capture phase
+        );
+      }}
+    >
       <CameraIntro targetDistance={4} />
 
       <ambientLight intensity={5} />
