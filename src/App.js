@@ -1,6 +1,7 @@
 import { useEonetEvents } from "./hooks/useEonetEvents";
 import EarthScene from "./components/scene/EarthScene";
 import CircularProgress from '@mui/material/CircularProgress';
+import InfoTooltip from "./components/ui/InfoTooltip";
 
 import './App.css';
 
@@ -25,6 +26,9 @@ export default function App() {
     <div className="App">
       <div className="App-header" style={{ height: "100vh" }}>
         <EarthScene events={events} />
+      </div>
+      <div style={{position: 'absolute', zIndex: 1, right: 10, top: 10}}>
+        <InfoTooltip/>
       </div>
     </div>
   );
