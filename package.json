@@ -20,7 +20,7 @@
     "three": "^0.182.0",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://kmanikon.github.io/nasa-eonet-map",
+  "homepage": "https://kmanikon.github.io/NASA-EONET-Visual/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

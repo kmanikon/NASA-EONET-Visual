@@ -4,7 +4,7 @@ import { TextureLoader } from "three";
 export default function Earth() {
   const texture = useLoader(
     TextureLoader,
-    "/textures/earth_daymap2.png"
+    `${process.env.PUBLIC_URL}/textures/earth_daymap2.png`
   );
 
   return (
