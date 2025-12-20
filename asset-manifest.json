@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.83077281.css",
-    "main.js": "/static/js/main.8813affc.js",
-    "index.html": "/index.html"
+    "main.css": "/NASA-EONET-VISUAL/static/css/main.83077281.css",
+    "main.js": "/NASA-EONET-VISUAL/static/js/main.8813affc.js",
+    "index.html": "/NASA-EONET-VISUAL/index.html"
   },
   "entrypoints": [
     "static/css/main.83077281.css",
