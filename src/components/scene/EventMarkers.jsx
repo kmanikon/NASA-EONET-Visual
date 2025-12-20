@@ -4,8 +4,8 @@ export default function EventMarkers({ events }) {
   return (
     <>
       {events.map((event) => {
-        const geom = event?.geometries?.at(-1);
-        if (!geom || geom.type !== "Point") return null;
+        const geom = event?.geometry?.at(-1);
+        if (!geom) return null;
 
         const [lon, lat] = geom.coordinates;
 
