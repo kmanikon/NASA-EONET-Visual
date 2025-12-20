@@ -1,0 +1,635 @@
+{
+    "title": "EONET Events",
+    "description": "Natural events from EONET.",
+    "link": "https://eonet.gsfc.nasa.gov/api/v3/events",
+    "events": [
+        {
+            "id": "EONET_16517",
+            "title": "CR L Wildfire, Yuma, Colorado",
+            "description": "5 Miles E from Joes, CO",
+            "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_16517",
+            "closed": null,
+            "categories": [
+                {
+                    "id": "wildfires",
+                    "title": "Wildfires"
+                }
+            ],
+            "sources": [
+                {
+                    "id": "IRWIN",
+                    "url": "https://irwin.doi.gov/observer/incidents/36bf5e21-134c-4543-9cea-b379e6bc1c6c"
+                }
+            ],
+            "geometry": [
+                {
+                    "magnitudeValue": 2000,
+                    "magnitudeUnit": "acres",
+                    "date": "2025-12-18T13:46:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        -102.610878,
+                        39.598158
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "EONET_16518",
+            "title": "33 Wildfire, Yuma, Colorado",
+            "description": null,
+            "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_16518",
+            "closed": null,
+            "categories": [
+                {
+                    "id": "wildfires",
+                    "title": "Wildfires"
+                }
+            ],
+            "sources": [
+                {
+                    "id": "IRWIN",
+                    "url": "https://irwin.doi.gov/observer/incidents/3c182aca-b92b-4b39-85be-ac8382c0bec8"
+                }
+            ],
+            "geometry": [
+                {
+                    "magnitudeValue": 12000,
+                    "magnitudeUnit": "acres",
+                    "date": "2025-12-18T13:45:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        -102.605378,
+                        40.046355
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "EONET_16519",
+            "title": "Terry Ranch Wildfire, Laramie, Wyoming",
+            "description": "11 Miles S from Cheyenne, WY",
+            "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_16519",
+            "closed": null,
+            "categories": [
+                {
+                    "id": "wildfires",
+                    "title": "Wildfires"
+                }
+            ],
+            "sources": [
+                {
+                    "id": "IRWIN",
+                    "url": "https://irwin.doi.gov/observer/incidents/358c6e78-82af-438f-9d9d-32bf895fc7ab"
+                }
+            ],
+            "geometry": [
+                {
+                    "magnitudeValue": 565,
+                    "magnitudeUnit": "acres",
+                    "date": "2025-12-18T12:50:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        -104.886358,
+                        41.044446
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "EONET_16483",
+            "title": "Tropical Cyclone 09S",
+            "description": null,
+            "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_16483",
+            "closed": null,
+            "categories": [
+                {
+                    "id": "severeStorms",
+                    "title": "Severe Storms"
+                }
+            ],
+            "sources": [
+                {
+                    "id": "JTWC",
+                    "url": "https://www.metoc.navy.mil/jtwc/products/sh0926.tcw"
+                }
+            ],
+            "geometry": [
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-18T00:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        110.9,
+                        -12.4
+                    ]
+                },
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-18T06:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        110.4,
+                        -12.2
+                    ]
+                },
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-18T12:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        110.1,
+                        -12.4
+                    ]
+                },
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-18T18:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        109.2,
+                        -12.2
+                    ]
+                },
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-19T00:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        108.9,
+                        -12.5
+                    ]
+                },
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-19T06:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        108.2,
+                        -12.5
+                    ]
+                },
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-19T12:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        108.1,
+                        -12.2
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "EONET_16520",
+            "title": "RX Cook Road Prescribed Fire, Baxter, Arkansas",
+            "description": null,
+            "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_16520",
+            "closed": null,
+            "categories": [
+                {
+                    "id": "wildfires",
+                    "title": "Wildfires"
+                }
+            ],
+            "sources": [
+                {
+                    "id": "IRWIN",
+                    "url": "https://irwin.doi.gov/observer/incidents/0b3bcf66-5b22-485b-bf94-752fb42add7a"
+                }
+            ],
+            "geometry": [
+                {
+                    "magnitudeValue": 858,
+                    "magnitudeUnit": "acres",
+                    "date": "2025-12-16T09:51:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        -92.356667,
+                        36.07955
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "EONET_16404",
+            "title": "RX Optimus North Prescribed Fire, Stone, Arkansas",
+            "description": null,
+            "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_16404",
+            "closed": null,
+            "categories": [
+                {
+                    "id": "wildfires",
+                    "title": "Wildfires"
+                }
+            ],
+            "sources": [
+                {
+                    "id": "IRWIN",
+                    "url": "https://irwin.doi.gov/observer/incidents/6fa2952d-ef68-478e-b97e-bc3e45a866b5"
+                }
+            ],
+            "geometry": [
+                {
+                    "magnitudeValue": 575,
+                    "magnitudeUnit": "acres",
+                    "date": "2025-12-15T10:25:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        -92.07395,
+                        36.043117
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "EONET_16375",
+            "title": "Tropical Cyclone 08P",
+            "description": null,
+            "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_16375",
+            "closed": null,
+            "categories": [
+                {
+                    "id": "severeStorms",
+                    "title": "Severe Storms"
+                }
+            ],
+            "sources": [
+                {
+                    "id": "JTWC",
+                    "url": "https://www.metoc.navy.mil/jtwc/products/sh0826.tcw"
+                }
+            ],
+            "geometry": [
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-14T06:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        168.5,
+                        -12.4
+                    ]
+                },
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-14T12:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        168.9,
+                        -13
+                    ]
+                },
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-14T18:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        169.3,
+                        -13.6
+                    ]
+                },
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-15T00:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        169.9,
+                        -14.2
+                    ]
+                },
+                {
+                    "magnitudeValue": 40,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-15T06:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        170.3,
+                        -14.5
+                    ]
+                },
+                {
+                    "magnitudeValue": 40,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-15T12:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        171.2,
+                        -14.8
+                    ]
+                },
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-15T18:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        171.8,
+                        -15.2
+                    ]
+                },
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-16T00:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        172,
+                        -15.4
+                    ]
+                },
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-16T06:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        172.1,
+                        -15.1
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "EONET_16376",
+            "title": "Tropical Cyclone Bakung",
+            "description": null,
+            "link": "https://eonet.gsfc.nasa.gov/api/v3/events/EONET_16376",
+            "closed": null,
+            "categories": [
+                {
+                    "id": "severeStorms",
+                    "title": "Severe Storms"
+                }
+            ],
+            "sources": [
+                {
+                    "id": "JTWC",
+                    "url": "https://www.metoc.navy.mil/jtwc/products/sh0726.tcw"
+                }
+            ],
+            "geometry": [
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-11T18:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        99.4,
+                        -7.9
+                    ]
+                },
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-12T00:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        98.3,
+                        -8.2
+                    ]
+                },
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-12T06:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        97.4,
+                        -8.4
+                    ]
+                },
+                {
+                    "magnitudeValue": 40,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-12T12:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        96.5,
+                        -8.5
+                    ]
+                },
+                {
+                    "magnitudeValue": 45,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-12T18:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        95.3,
+                        -8.6
+                    ]
+                },
+                {
+                    "magnitudeValue": 50,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-13T00:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        94.6,
+                        -8.8
+                    ]
+                },
+                {
+                    "magnitudeValue": 60,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-13T06:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        94.1,
+                        -9.1
+                    ]
+                },
+                {
+                    "magnitudeValue": 70,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-13T12:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        93.2,
+                        -9.5
+                    ]
+                },
+                {
+                    "magnitudeValue": 80,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-13T18:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        92.3,
+                        -9.9
+                    ]
+                },
+                {
+                    "magnitudeValue": 75,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-14T00:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        91.7,
+                        -10.2
+                    ]
+                },
+                {
+                    "magnitudeValue": 70,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-14T06:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        91.1,
+                        -10.3
+                    ]
+                },
+                {
+                    "magnitudeValue": 70,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-14T12:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        90.9,
+                        -10.6
+                    ]
+                },
+                {
+                    "magnitudeValue": 60,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-14T18:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        91.1,
+                        -10.8
+                    ]
+                },
+                {
+                    "magnitudeValue": 55,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-15T00:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        91.3,
+                        -10.9
+                    ]
+                },
+                {
+                    "magnitudeValue": 50,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-15T06:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        91.6,
+                        -10.9
+                    ]
+                },
+                {
+                    "magnitudeValue": 45,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-15T12:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        92.2,
+                        -11
+                    ]
+                },
+                {
+                    "magnitudeValue": 45,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-15T18:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        92.7,
+                        -10.9
+                    ]
+                },
+                {
+                    "magnitudeValue": 45,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-16T00:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        93.2,
+                        -11.2
+                    ]
+                },
+                {
+                    "magnitudeValue": 45,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-16T06:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        93.1,
+                        -11.6
+                    ]
+                },
+                {
+                    "magnitudeValue": 45,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-16T12:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        93.2,
+                        -11.6
+                    ]
+                },
+                {
+                    "magnitudeValue": 45,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-16T18:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        93.2,
+                        -11.6
+                    ]
+                },
+                {
+                    "magnitudeValue": 65,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-17T00:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        93,
+                        -12
+                    ]
+                },
+                {
+                    "magnitudeValue": 55,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-17T06:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        92.8,
+                        -12.1
+                    ]
+                },
+                {
+                    "magnitudeValue": 35,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-17T12:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        91.6,
+                        -11.5
+                    ]
+                },
+                {
+                    "magnitudeValue": 30,
+                    "magnitudeUnit": "kts",
+                    "date": "2025-12-17T18:00:00Z",
+                    "type": "Point",
+                    "coordinates": [
+                        91.4,
+                        -11
+                    ]
+                }
+            ]
+        }
+    ]
+}

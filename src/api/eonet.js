@@ -1,7 +1,9 @@
+import backup_data from './backup_data.json';
+
 const BASE_URL = process.env.REACT_APP_EONET_URL;
 
 export async function fetchEvents({
-  days = 1,
+  days = 7,
   limit = 200,
   status = "open",
 } = {}) {
@@ -9,7 +11,13 @@ try {
     if (sessionStorage.getItem("eonet_data") != null) {
         const eonet_json = JSON.parse(sessionStorage.getItem("eonet_data"))
         if (eonet_json?.events && eonet_json?.events?.length > 0) {
-            return eonet_json?.events
+            if (eonet_json?.events?.length == 0) {
+                return backup_data?.events || [];
+            } 
+            return eonet_json?.events || [];
+            
+        } else {
+            sessionStorage.removeItem("eonet_data");
         }
     }
     const res = await fetch(
@@ -17,9 +25,13 @@ try {
     );
     const data = await res.json();
     sessionStorage.setItem("eonet_data", JSON.stringify(data))
-    return data?.events;
+    if (data?.events?.length == 0) {
+        return backup_data?.events || []
+    }
+    return data?.events || [];
 } catch (e) {
     console.log("error fetching nasa eonet api...")
-    return []
+    console.log(e)
+    return backup_data?.events || [];
 }
 }
