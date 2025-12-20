@@ -33,6 +33,11 @@ export default function EventMarker({ lat, lon, event }) {
   const ref = useRef();
   const popperRef = useRef(null);
 
+  const latestGeometry = event?.geometry?.[event.geometry.length - 1];
+  const category = event?.categories?.[0];
+  const source = event?.sources?.[0];
+
+
   const position = latLonToVector3(lat, lon);
   const [visible, setVisible] = useState(true);
   const [open, setOpen] = useState(false);
@@ -73,23 +78,74 @@ export default function EventMarker({ lat, lon, event }) {
             PopperProps={{
               popperRef,
               sx: {
-                zIndex: 9999, // 🔝 always above other markers
+                zIndex: 9999,
                 pointerEvents: "auto",
               },
             }}
             title={
-              <div style={{ overflow: "hidden" }}>
+              <div style={{ maxWidth: 260 }}>
+                {/* Title */}
                 <Typography
                   variant="subtitle2"
-                  sx={{ fontWeight: 600, mb: 0.5 }}
+                  sx={{ fontWeight: 600, mb: 0.25 }}
                 >
                   {event.title}
                 </Typography>
-                <Typography variant="body2" sx={{ color: "#ccc", m: 0 }}>
-                  {event.description
-                    ? event.description.slice(0, 100)
-                    : "No description"}
+
+                {/* Category */}
+                {category && (
+                  <Typography
+                    variant="caption"
+                    sx={{ color: "#90caf9", display: "block", mb: 0.5 }}
+                  >
+                    {category.title}
+                  </Typography>
+                )}
+
+                {/* Description */}
+                <Typography
+                  variant="body2"
+                  sx={{ color: "#ccc", mb: 0.75 }}
+                >
+                  {event.description || "No description available."}
                 </Typography>
+
+                {/* Magnitude + Date */}
+                {latestGeometry && (
+                  <Typography
+                    variant="caption"
+                    sx={{ color: "#aaa", display: "block" }}
+                  >
+                    {latestGeometry.magnitudeValue && (
+                      <>
+                        Magnitude:{" "}
+                        <strong>
+                          {latestGeometry.magnitudeValue}{" "}
+                          {latestGeometry.magnitudeUnit}
+                        </strong>
+                        {" • "}
+                      </>
+                    )}
+                    {new Date(latestGeometry.date).toLocaleDateString()}
+                  </Typography>
+                )}
+
+                {/* Source link */}
+                {source?.url && (
+                  <Typography
+                    variant="caption"
+                    sx={{ mt: 0.5, display: "block" }}
+                  >
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "#4fc3f7", textDecoration: "none" }}
+                    >
+                      View source ↗
+                    </a>
+                  </Typography>
+                )}
               </div>
             }
           >
