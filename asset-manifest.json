@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.83077281.css",
-    "main.js": "/static/js/main.8813affc.js",
-    "index.html": "/index.html"
+    "main.css": "/NASA-EONET-Visual/static/css/main.83077281.css",
+    "main.js": "/NASA-EONET-Visual/static/js/main.9a7dd72b.js",
+    "index.html": "/NASA-EONET-Visual/index.html"
   },
   "entrypoints": [
     "static/css/main.83077281.css",
-    "static/js/main.8813affc.js"
+    "static/js/main.9a7dd72b.js"
   ]
 }
